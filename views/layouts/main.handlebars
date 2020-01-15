@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
-  <title>Home Page</title>
+  <title>Leashed</title>
 </head>
-
 <body>
-  {{{body}}}
+  <div id="home">
+    <div class="jumbtron d-flex justify-content-center mt-2">
+      <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 95 109.36">
+        <defs>
+          <style>
+            .cls-1 {
+              isolation: isolate;
+            }
+          </style>
+        </defs>
+        <title>Dog_1539640</title>
+        <a href="/views/index.handlebars">
+          <path
+            d="M79.61,25.35,80.44,15a1.79,1.79,0,0,0-3-1.42l-19,18.66,2.53,2.54L73.56,47.4l2.54,2.53,3-3,4.33,4.33a1.79,1.79,0,0,0,2.53,0l8.51-8.51a1.8,1.8,0,0,0,0-2.54Z"
+            transform="translate(0 -13.04)" />
+          <path
+            d="M12.8,40.35V84.27a1.79,1.79,0,0,0,1.79,1.79h9.86a1.79,1.79,0,0,0,1.79-1.79V69h34V85.16a1.81,1.81,0,0,0,1.8,1.8h10.3a1.8,1.8,0,0,0,1.79-1.8v-30l-3.58-3.58L57.33,38.29l-2.54-2.54-2,1.93H17.26L9.05,29.47a1.66,1.66,0,0,0-2.35,0L5.49,30.68a1.66,1.66,0,0,0,0,2.35Z"
+            transform="translate(0 -13.04)" /><text class="cls-1" y="-13.04" /><text class="cls-1" y="-13.04" /><text
+            y="-13.04" /><text y="-13.04" /></a>
+      </svg>
+      <h1 class="pt-5 mt-5">{{msg}}</h1>
+    </div>
+    <nav class="nav d-flex justify-content-center mb-2">
+      <a class="p-2 text-muted" href="/views/index.handlebars">Home</a>
+      <a class="p-2 text-muted" href="/views/breeders.handlebars">Breeders</a>
+      <a class="p-2 text-muted" href="/views/dogsearch.handlebars">Dog Search</a>
+      <a class="p-2 text-muted" href="/views/events.handlebars">Events</a>
+      <a class="p-2 text-muted" href="/views/contact.handlebars">Contact</a>
+    </nav>
+    {{{body}}}
+  </div>
 </body>
-
 </html>

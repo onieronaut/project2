@@ -1,23 +1,39 @@
 let breederSeeds = [
   {
-    kennelName: "Deloran's",
+    name: "Deloran's",
     email: "email",
-    breedType: "Schipperke",
-    missionStatement: "",
-    upcomingLitters: "No",
+    breed: "Schipperke",
+    mission: "",
+    litters: false,
     litterDate: "",
     group: "Non-sporting"
   },
   {
-    kennelName: "von Haus Huro",
+    name: "von Haus Huro",
     email: "vomHausHuro@gmail.com",
-    breedType: "German Shepherd Dogs",
-    missionStatement: "Blah Blah",
-    upcomingLitters: "Yes",
+    breed: "German Shepherd Dogs",
+    mission: "Blah Blah",
+    litters: true,
     litterDate: "June 7, 2020",
-    group: "Herding" 
+    group: "Herding"
+  },
+  {
+    name: "vvon tjarnshaget",
+    email: "rohde@tjaernshaget.de",
+    breed: "German Shepherd Dogs",
+    mission: "Blah Blah",
+    litters: "Yes",
+    litterDate: "June 7, 2020",
+    group: "Herding"
+  },
+  {
+    name: "Nighthawk Rottweilers",
+    email: "Nighthawks@gmail.com",
+    breed: "Rottweilers",
+    mission: "Blah Blah",
+    litters: false,
+    litterDate: "",
+    group: "Horking"
   }
-];
-
-
+]
 module.exports = breederSeeds;

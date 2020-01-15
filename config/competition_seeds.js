@@ -6,6 +6,7 @@ let competitionSeeds = [
     location: "24747",
     description: "Blah Blah",
     group: "working"
+
   },
   {
     name: "Jacksonville All-breed Conformation Show",
@@ -54,6 +55,7 @@ let competitionSeeds = [
     location: "33777",
     description: "Tampa Bay is happy to kick off the PSA season with a killer trial. <br>Judge Janney Edwrds.<br> Decoys: Darryl Richey, Shawn Edwards, Jeff Riccio, Matt Taylor, Shaun Thankachen, and Kyle Murphy.",
     group: "All"
+
   }
 ];
 

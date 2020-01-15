@@ -65,9 +65,9 @@ function initializeDB(seed1, seed2) {
 		});
 	}
 
-	for (let i=0; i < seed1.length; i++) {
+	for (let j=0; j < seed2.length; j++) {
 		
-		db.Breeder.create(seed2[i]).then(function(data){
+		db.Breeder.create(seed2[j]).then(function(data){
 		});
 	}
 

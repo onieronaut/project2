@@ -1,12 +1,14 @@
 module.exports = function (sequelize, DataTypes) {
 	const Breeder = sequelize.define("Breeder", {
-		kennelName: DataTypes.STRING,
+		name: DataTypes.STRING,
 		email: DataTypes.STRING,
-		breedType: DataTypes.STRING,
-		missionStatement: DataTypes.TEXT,
-		upcomingLitters: DataTypes.BOOLEAN,
+		breed: DataTypes.STRING,
+		mission: DataTypes.TEXT,
+		litters: DataTypes.BOOLEAN,
 		litterDate: DataTypes.STRING,
 		group: DataTypes.STRING
 	});
 	return Breeder;
 };
+
+

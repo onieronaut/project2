@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 const db = require("../models");
 
 module.exports = function(app) {
@@ -9,7 +8,6 @@ module.exports = function(app) {
 			res.json(data);
 		});
 	});
-    
     
 	// Search by breed
 	app.get("/api/breeders/:breed", function (req, res) {
@@ -31,7 +29,7 @@ module.exports = function(app) {
 		}).then(function(data) {
 			res.json(data);
 		});
-	});
+    });
 	
 	// Search by group
 	app.get("/api/breeders/:group", function (req, res) {

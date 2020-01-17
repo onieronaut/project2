@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,10 @@
 
     <title>Document</title>
 </head>
+
 <body>
     <div class="container">
-    
+
         <form>
             <div class="form-group">
                 <label for="breederName">Kennel Name</label>
@@ -18,7 +20,7 @@
             </div>
             <div class="form-group">
                 <label for="breederEmail">Email</label>
-                <input type="email" class="form-control" id="breederEmail">
+                <input type="text" class="form-control" id="breederEmail">
             </div>
             <div class="form-group">
                 <label for="breederBreed">Breed</label>
@@ -34,7 +36,7 @@
                     <option>Choose One</option>
                     <option>Yes</option>
                     <option>No</option>
-                    </select>
+                </select>
             </div>
             <div class="form-group">
                 <label for="breederDate">Litter Date [MM/DD/YYYY]</label>
@@ -50,10 +52,45 @@
                     <option>Sporting</option>
                     <option>Non-Sporting</option>
                     <option>Toy</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary breederSubmit">Submit</button>
         </form>
     </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+        $(".breederSubmit").on("click", function () {
+            event.preventDefault();
+
+            let newBreeder = {
+                name: $("#breederName").val().trim(),
+                email: $("#breederEmail").val().trim(),
+                breed: $("#breederBreed").val().trim(),
+                mission: $("#breederMission").val().trim(),
+                litters: $("#breederLitters").val(),
+                litterDate: $("#breederDate").val().trim(),
+                group: $("#breederGroup").val()
+            }
+
+            if (newBreeder.litters === "Yes") {
+                newBreeder.litters = true;
+            } else {
+                newBreeder.litters = false;
+            }
+
+            $.post("/api/breeders", newBreeder, function(data) {
+            });
+        });
+
+
+
+
+
+
+
+    </script>
 </body>
+
 </html>

@@ -9,7 +9,6 @@ module.exports = function(app) {
 		});
 	});
     
-    
 	// Search by breed
 	app.get("/api/breeders/:breed", function (req, res) {
 		db.Breeder.findAll({

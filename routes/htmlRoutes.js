@@ -22,6 +22,22 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/breeders", function(req, res) {
+    res.render("breeders");
+  });
+
+  app.get("/dogsearch", function(req, res) {
+    res.render("dogsearch");
+  });
+
+  app.get("/events", function(req, res) {
+    res.render("events");
+  });
+
+  app.get("/contact", function(req, res) {
+    res.render("contact");
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");

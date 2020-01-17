@@ -13,31 +13,31 @@
 <body>
     <div class="container">
 
-        <form>
+        <form id="competition">
             <div class="form-group">
                 <label for="competitionName">Competition Name</label>
-                <input type="text" class="form-control" id="competitionName">
+                <input type="text" class="form-control" id="competitionName" name="name">
             </div>
             <div class="form-group">
                 <label for="competitionEmail">Email</label>
-                <input type="text" class="form-control" id="competitionEmail">
+                <input type="text" class="form-control" id="competitionEmail" name="email">
             </div>
             <div class="form-group">
-                <label for="competitionDate">Date [MM/DD/YYYY]</label>
-                <input type="text" class="form-control" id="competitionDate">
+                <label for="competitionDate">Date [DD/MM//YYYY]</label>
+                <input type="text" class="form-control" id="competitionDate" name="date">
             </div>
             <div class="form-group">
                 <label for="competitionLocation">Location</label>
-                <input type="text" class="form-control" id="competitionLocation">
+                <input type="text" class="form-control" id="competitionLocation" name="location">
             </div>
             <div class="form-group">
                 <label for="competitionDescription">Description</label>
-                <textarea class="form-control" rows="3" id="competitionDescription"></textarea>
-            </div>            
+                <textarea class="form-control" rows="3" id="competitionDescription" name="description"></textarea>
+            </div>
             <div class="form-group">
                 <label for="competitionGroup">Group</label>
-                <select class="form-control" id="competitionGroup">
-                    <option>Choose One</option>
+                <select class="form-control" id="competitionGroup" name="group">
+                    <option value="">Choose One</option>
                     <option>Hound</option>
                     <option>Terrier</option>
                     <option>Working</option>
@@ -49,31 +49,56 @@
             <button type="submit" class="btn btn-primary competitionSubmit">Submit</button>
         </form>
     </div>
-
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.js"></script>
+
     <script>
 
-        $(".competitionSubmit").on("click", function () {
-            event.preventDefault();
+        $("#competition").validate({
+            rules: {
+                name: {
+                    required: true
+                },
+                email: {
+                    required: true,
+                    email: true,
+                },
+                date: {
+                    required: true,
+                    dateITA: true
 
-            let newCompetition = {
-                name: $("#competitionName").val().trim(),
-                email: $("#competitionEmail").val().trim(),
-                date: $("#competitionDate").val().trim(),
-                location: $("#competitionLocation").val().trim(),
-                description: $("#competitionDescription").val().trim(),
-                group: $("#competitionGroup").val()
+                },
+                location: {
+                    required: true
+                },
+                description: {
+                    required: true
+                },
+                group: {
+                    required: true,
+                }
+            },
+            submitHandler: function (form) {
+
+                let newCompetition = {
+                    name: $("#competitionName").val().trim(),
+                    email: $("#competitionEmail").val().trim(),
+                    date: $("#competitionDate").val().trim(),
+                    location: $("#competitionLocation").val().trim(),
+                    description: $("#competitionDescription").val().trim(),
+                    group: $("#competitionGroup").val()
+                }
+
+                console.log(newCompetition);
+
+                $.post("/api/competitions", newCompetition, function (data) {
+                })
+
+
             }
-
-            $.post("/api/competitions", newCompetition, function(data) {
-            })
         });
-
-
-
-
-
-
 
     </script>
 </body>

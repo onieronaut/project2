@@ -58,17 +58,12 @@ module.exports = app;
 
 // Initializes database with seed values
 function initializeDB(seed1, seed2) {
-
-	for (let i=0; i < seed1.length; i++) {
 		
-		db.Competition.create(seed1[i]).then(function(data){
-		});
-	}
-
-	for (let j=0; j < seed2.length; j++) {
+	db.Competition.bulkCreate(seed1).then(function(data){
+	});
 		
-		db.Breeder.create(seed2[j]).then(function(data){
-		});
-	}
+	db.Breeder.bulkCreate(seed2).then(function(data){
+	});
+
 
 }

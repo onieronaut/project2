@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
   <title>Leashed</title>
 </head>
+
 <body>
   <div id="home">
     <div class="jumbtron d-flex justify-content-center mt-2">
@@ -27,16 +29,19 @@
             transform="translate(0 -13.04)" /><text class="cls-1" y="-13.04" /><text class="cls-1" y="-13.04" /><text
             y="-13.04" /><text y="-13.04" /></a>
       </svg>
+
       <h1 class="pt-5 mt-5">{{msg}}</h1>
     </div>
+
     <nav class="nav d-flex justify-content-center mb-2">
-      <a class="p-2 text-muted" href="/views/index.handlebars">Home</a>
-      <a class="p-2 text-muted" href="/views/breeders.handlebars">Breeders</a>
-      <a class="p-2 text-muted" href="/views/dogsearch.handlebars">Dog Search</a>
-      <a class="p-2 text-muted" href="/views/events.handlebars">Events</a>
-      <a class="p-2 text-muted" href="/views/contact.handlebars">Contact</a>
+      <a class="p-2 text-muted" href="/">Home</a>
+      <a class="p-2 text-muted" href="/breeders">Breeders</a>
+      <a class="p-2 text-muted" href="/dogsearch">Dog Search</a>
+      <a class="p-2 text-muted" href="/events">Events</a>
+      <a class="p-2 text-muted" href="/contact">Contact</a>
     </nav>
     {{{body}}}
   </div>
 </body>
+
 </html>

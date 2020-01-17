@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "poop",
     "database": "unleasheddb",
     "host": "localhost",
     "dialect": "mysql"

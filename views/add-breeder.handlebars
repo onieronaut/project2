@@ -99,7 +99,9 @@
             console.log(newBreeder);
 
             $.post("/api/breeders", newBreeder, function (data) {
+                window.location.replace("/");
             });
+
         }
     });
 

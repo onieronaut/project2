@@ -38,6 +38,18 @@ module.exports = function(app) {
     res.render("contact");
   });
 
+  app.get("/add-breeder", function(req, res) {
+    res.render("add-breeder");
+  });
+
+  app.get("/add-competitor", function(req, res) {
+    res.render("add-competitor");
+  });
+
+  app.get("/add-event", function(req, res) {
+    res.render("add-event");
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");

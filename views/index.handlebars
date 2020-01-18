@@ -1,33 +1,73 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center mb-3">
+      <h3>All of Your Needs for Pup Breeders, Events, and Adoptions</h3>
+    </div>
+  </div>
+  <div class="row justify-content-center text-center my-5">
+    <div class="col-sm-3 mx-4">
+      <div class="card dog-search" style="width: 12rem">
+        <img src="/assets/img/mike-burke-gxyfJQg7Lno-unsplash.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <a href="/dogsearch">
+            <h4>Looking for a Dog</h4>
+          </a>
+          <p class="card-text">Dog Search.</p>
+          <a href="#" class="btn btn-dark">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 mx-1">
+      <div class="card breeder-search" style="width: 12rem">
+        <img src="/assets/img/valerie-elash-UxdeBphE62U-unsplash.jpg" class="card-img-top" alt="">
+        <div class="card-body">
+          <a href="/breeders">
+            <h4>Looking for a Breeder</h4>
+          </a>
+          <p class="card-text">Breeder Search.</p>
+          <a href="#" class="btn btn-dark">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 mx-4">
+      <div class="card competition-search " style="width: 12rem">
+        <img src="/assets/img/Dog_95895.png" class="card-img-top" alt="black puppy">
+        <div class="card-body">
+          <a href="">
+            <h4>Looking for an Event</h4>
+          </a>
+          <p class="card-text">Competition Info.</p>
+          <a href="/events" class="btn btn-dark">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center my-5">
+    <div class="col-sm-5 mx-4">
+      <div class="card breeder-table p-1" style="width: 20rem">
+        <h3>Breeders Near Me</h3>
+        <p class="text-muted">Search for Breeders Near Me</p>
+        <div class="card-body">
+          <p class="card-text">Dog Search.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5 mx-4">
+      <div class="card competition-table p-1" style="width: 20rem">
+        <h3>Competitions Near Me</h3>
+        <p class="text-muted">Search for Competitions Near Me</p>
+        <div class="card-body">
+          <p class="card-text">Dog Search.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="card mb-2">
+      <div class="card-body">
+        Pup Rescue and Adoptions.
+        <a href="#" class="btn btn-dark">Go somewhere</a>
       </div>
     </div>
   </div>
 </div>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <form id="breeder">
+            <div class="form-group">
+                <label for="breederName">Kennel Name</label>
+                <input type="text" class="form-control" id="breederName" name="name">
+            </div>
+            <div class="form-group">
+                <label for="breederEmail">Email</label>
+                <input type="text" class="form-control" id="breederEmail" name="email">
+            </div>
+            <div class="form-group">
+                <label for="breederBreed">Breed</label>
+                <input type="text" class="form-control" id="breederBreed" name="breed">
+            </div>
+            <div class="form-group">
+                <label for="breederMission">Mission Statement</label>
+                <textarea class="form-control" rows="3" id="breederMission" name="mission"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="breederLitters">Do you have upcoming litters?</label>
+                <select class="form-control" id="breederLitters" name="litters">
+                    <option value="">Choose One</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="breederDate">Litter Date [DD/MM//YYYY]</label>
+                <input type="text" class="form-control" id="breederDate" name="litterDate">
+            </div>
+            <div class="form-group">
+                <label for="breederGroup">Group</label>
+                <select class="form-control" id="breederGroup" name="group">
+                    <option value="">Choose One</option>
+                    <option>Hound</option>
+                    <option>Terrier</option>
+                    <option>Working</option>
+                    <option>Sporting</option>
+                    <option>Non-Sporting</option>
+                    <option>Toy</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary breederSubmit">Submit</button>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.js"></script>
+
+    <script>
+
+        $("#breeder").validate({
+            rules: {
+                name: {
+                    required: true
+                },
+                email: {
+                    required: true,
+                    email: true,
+                },
+                breed: {
+                    required: true
+                },
+                mission: {
+                    required: true
+                },
+                litters: {
+                    required: true
+                },
+                date: {
+                    dateITA: true
+                },
+                group: {
+                    required: true,
+                }
+            },
+            submitHandler: function (form) {
+
+                let newBreeder = {
+                    name: $("#breederName").val().trim(),
+                    email: $("#breederEmail").val().trim(),
+                    breed: $("#breederBreed").val().trim(),
+                    mission: $("#breederMission").val().trim(),
+                    litters: $("#breederLitters").val(),
+                    litterDate: $("#breederDate").val().trim(),
+                    group: $("#breederGroup").val()
+                }
+
+                if (newBreeder.litters === "Yes") {
+                    newBreeder.litters = true;
+                } else {
+                    newBreeder.litters = false;
+                }
+
+                console.log(newBreeder);
+
+                $.post("/api/breeders", newBreeder, function (data) {
+                });
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<div class="container">
+
+    <h2 class="text-center mb-3">Events</h2>
+
+    <div class="row">
+        <div class="col-sm-6 my-4">
+            <h3 class="mb-4">Search for Events!</h3>
+
+        </div>
+
+        <div class="col-sm-6 text-center my-4 float-right">
+            <h3>Don't See an Event? Click Here to Add Them!</h3>
+            <a href="/add-event">
+                <button type="button" class="btn btn-dark" id="add-event">Add Event</button>
+            </a>
+        </div>
+
+
+        {{!-- All Competitions Displayed --}}
+
+        <div class="row">
+
+            <br>
+
+            <table class="table table-hover">
+                <input class="col-sm-3 my-1" type="text" id="userInput"
+                    placeholder="Search Breeders">
+                <select class="form-group"id="competitionGroup">
+                    <option val=""></option>
+                    <option>Hound</option>
+                    <option>Herding</option>
+                    <option>Terrier</option>
+                    <option>Working</option>
+                    <option>Sporting</option>
+                    <option>Non-Sporting</option>
+                    <option>Toy</option>
+                    <option>All Groups</option>
+                </select>
+                <button class="btn btn-dark clear">Clear</button>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Location</th>
+                        <th>Group</th>
+                    </tr>
+                </thead>
+
+                {{#each competitions}}
+
+                <tbody id="myTable">
+                    <tr>
+                        <th><strong>{{dataValues.name}}</th>
+                        </strong>
+                        <td>{{dataValues.email}}</td>
+                        <td>{{dataValues.date}}</td>
+
+                        <td>
+
+                            {{dataValues.description}}</td>
+                        <td>{{dataValues.location}}</td>
+                        <td>{{dataValues.group}}</td>
+                    </tr>
+                </tbody>
+
+
+                {{/each}}
+                <div class="col-12-sm">
+                </div>
+            </table>
+        </div>
+
+
+    </div>
+</div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#userInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+
+    $(document).ready(function () {
+        $('#competitionGroup').change(function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+
+            });
+        });
+    });
+
+    $(".clear").on("click", function () {
+        event.preventDefault();
+
+        $("#myInput").val("").trigger("keyup");
+        $("#competitionGroup").val("").trigger("change");
+    })
+
+</script>

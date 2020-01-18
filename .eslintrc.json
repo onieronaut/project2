@@ -1,13 +1,14 @@
 {
+        "parserOptions": {
+            "ecmaVersion": 6
+        },
     "env": {
         "browser": true,
         "commonjs": true,
-        "node": true
+        "node": true,
+        "es6": true
     },
     "extends": "prettier",
-    "plugins": [
-        "prettier"
-      ],
     "rules": {
         "no-duplicate-case":"error",
         "no-empty":"error",
@@ -24,7 +25,7 @@
         "camelcase": "error",
         "indent": [
             "error",
-            2
+            "tab"
         ],
         "quotes": [
             "error",

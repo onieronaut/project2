@@ -1,7 +1,7 @@
 {
-  "name": "node-handlebars-boilerplate",
+  "name": "unleashed",
   "version": "1.0.0",
-  "description": "Project 2 Starter",
+  "description": "Project 2",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -11,7 +11,8 @@
   },
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.0.0",
+    "dotenv": "^8.2.0",
+    "dotenv-json": "^1.0.0",
     "express": "^4.17.0",
     "express-handlebars": "^3.1.0",
     "mysql2": "^1.6.5",
@@ -25,6 +26,8 @@
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "mocha": "^6.1.4",
-    "prettier": "^1.17.1"
+    "nodemon": "^2.0.2",
+    "prettier": "^1.17.1",
+    "sequelize-cli": "^5.5.1"
   }
 }

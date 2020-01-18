@@ -22,11 +22,29 @@
         </a>
     </div>
 
-    <div id="breeder-results"></div>
-
 </div>
-<div class="col-sm" id="breeders"></div>
+{{!-- All Breeders Displayed --}}
+<div class="row">
+    {{#each breeders}}
+    <div class="col-12-sm">
+        <h2>{{dataValues.name}}</h2>
+        Email: {{dataValues.email}}
+        Breed: {{dataValues.breed}}
+        Mission: {{dataValues.mission}}
 
+        {{!-- If there is an upcoming litter it will display yes and the date, if not then it will display No and no date  --}}
+        {{#if dataValues.litters}}
+        Upcoming Litters?: Yes
+        Litter Date: {{dataValues.litterDate}}
+        {{else}}
+        Litters: No
+        {{/if}}
+        Group: {{dataValues.group}}
+        {{/each}}
+    </div>
+</div>
+</div>
 
 <script>
+
 </script>

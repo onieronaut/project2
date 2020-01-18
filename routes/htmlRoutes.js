@@ -42,10 +42,6 @@ module.exports = function(app) {
     res.render("add-breeder");
   });
 
-  app.get("/add-competitor", function(req, res) {
-    res.render("add-competitor");
-  });
-
   app.get("/add-event", function(req, res) {
     res.render("add-event");
   });

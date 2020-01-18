@@ -15,7 +15,7 @@ let breederSeeds = [
 		breed: "German Shepherd Dogs",
 		mission: "Blah Blah",
 		litters: true,
-		litterDate: "June 7, 2020",
+		litterDate: "06/07/2020",
 		group: "Herding"
 	},
 	{
@@ -24,7 +24,7 @@ let breederSeeds = [
 		breed: "German Shepherd Dogs",
 		mission: "Blah Blah",
 		litters: true,
-		litterDate: "June 7, 2020",
+		litterDate: "25/10/2020",
 		group: "Herding"
 	},
 	{

@@ -1,33 +1,54 @@
-// Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+let breeders = $("#breeders");
+let breeds = $("#breeds");
+let litters = $("#litters");
+let groups = $("#groups");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  breederTable: function(breeders) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "/api/breeders",
+      data: JSON.stringify(breeders)
     });
   },
-  getExamples: function() {
+  getBreeders: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "/api/breeders",
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+
+  getBreeds: function() {
     return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
+      url: "/api/breeders/:breed",
+      type: "GET"
+    });
+  },
+
+  getLitters: function() {
+    return $.ajax({
+      url: "/api/breeders/:litters",
+      type: "GET"
+    });
+  },
+
+  getLitters: function() {
+    return $.ajax({
+      url: "/api/breeders/:group",
+      type: "GET"
     });
   }
+
+  // deleteExample: function(id) {
+  //   return $.ajax({
+  //     url: "api/examples/" + id,
+  //     type: "DELETE"
+  //   });
+  // }
 };
 
 // refreshExamples gets new examples from the db and repopulates the list

@@ -23,8 +23,19 @@
             <br>
 
             <table class="table table-hover">
-                <input class="col-sm-3 my-1" type="text" id="userInput" onkeyup="myFunction()"
+                <input class="col-sm-3 my-1" type="text" id="userInput"
                     placeholder="Search Breeders">
+                <select class="form-group"id="competitionGroup">
+                    <option val=""></option>
+                    <option>Hound</option>
+                    <option>Terrier</option>
+                    <option>Working</option>
+                    <option>Sporting</option>
+                    <option>Non-Sporting</option>
+                    <option>Toy</option>
+                    <option>All Groups</option>
+                </select>
+                <button class="btn btn-dark clear">Clear</button>
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -38,7 +49,7 @@
 
                 {{#each competitions}}
 
-                <tbody>
+                <tbody id="myTable">
                     <tr>
                         <th><strong>{{dataValues.name}}</th>
                         </strong>
@@ -62,18 +73,34 @@
 
 
     </div>
-
-    {{!-- Users should be able to attend or join events/competitions when an event is found --}}
-    {{!-- <div class="col-sm" id="join-events">
-    <h3>Join an Event!</h3>
-    <div class=""></div>
-</div> --}}
-
-
 </div>
 </div>
 
 <script>
+    $(document).ready(function () {
+        $("#userInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
 
+    $(document).ready(function () {
+        $('#competitionGroup').change(function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+
+            });
+        });
+    });
+
+    $(".clear").on("click", function () {
+        event.preventDefault();
+
+        $("#myInput").val("").trigger("keyup");
+        $("#competitionGroup").val("").trigger("change");
+    })
 
 </script>

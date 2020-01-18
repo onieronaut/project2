@@ -4,6 +4,12 @@
 
     <div class="row">
 
+<div class="col-sm-12 text-center mt-4">
+    <h3>Don't See a Breeder? Click Here to Add Them!</h3>
+    <a href="/add-breeder">
+        <button type="button" class="btn btn-dark" id="add-breeder">Add Breeder</button>
+    </a>
+</div>
         <h3>Search for a Breeder!</h3>
         {{!-- <div class="col-sm">
             <div class="card p-3">
@@ -27,7 +33,17 @@
 
         </div>
         <table class="table table-hover">
-            <input class="col-sm-3" type="text" id="userInput" onkeyup="myFunction()" placeholder="Search Breeders">
+            <input class="col-sm-3" type="text" id="userInput" placeholder="Search Breeders">
+             <select class="form-group"id="breederGroup">
+                    <option val=""></option>
+                    <option>Hound</option>
+                    <option>Terrier</option>
+                    <option>Working</option>
+                    <option>Sporting</option>
+                    <option>Non-Sporting</option>
+                    <option>Toy</option>
+                </select>
+                <button class="btn btn-dark clear">Clear</button>
 
             <div class="col-sm">
 
@@ -45,7 +61,7 @@
 
                 {{#each breeders}}
 
-                <tbody>
+                <tbody id="myTable">
                     <tr>
                         <th><strong>{{dataValues.name}}</th>
                         </strong>
@@ -80,15 +96,33 @@
     </div>
 </div>
 
-<div class="col-sm-12 text-center mt-4">
-    <h3>Don't See a Breeder? Click Here to Add Them!</h3>
-    <a href="/add-breeder">
-        <button type="button" class="btn btn-dark" id="add-breeder">Add Breeder</button>
-    </a>
-</div>
 </div>
 </div>
 
 <script>
-    console.log(dataValues)
+    $(document).ready(function () {
+        $("#userInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+
+    $(document).ready(function () {
+        $('#breederGroup').change(function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+
+            });
+        });
+    });
+
+    $(".clear").on("click", function () {
+        event.preventDefault();
+
+        $("#myInput").val("").trigger("keyup");
+        $("#breederGroup").val("").trigger("change");
+    })
 </script>

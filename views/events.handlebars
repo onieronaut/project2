@@ -23,20 +23,6 @@
         </a>
     </div>
 
-{{!-- All Competitions Displayed --}}
-    <div class="row">
-    {{#each competitions}}
-    <div class="col-12-sm">
-        <h2>{{dataValues.name}}</h2>
-        Email: {{dataValues.email}}
-        Breed: {{dataValues.date}}
-        Description: {{dataValues.description}}
-        Location: {{dataValues.location}}
-        Group: {{dataValues.group}}
-        {{/each}}
-    </div>
-</div>
-
 </div>
 
 {{!-- Users should be able to attend or join events/competitions when an event is found --}}
@@ -44,8 +30,76 @@
     <h3>Join an Event!</h3>
     <div class=""></div>
 </div> --}}
+<div class="container">
 
+    <h2>Filterable Table</h2>
+    <p>Type something in the input field to search the table for first names, last names or emails:</p>
+    <input id="myInput" type="text" placeholder="Search..">
+    <select id="competitionGroup">
+        <option val=""></option>
+        <option>Working</option>
+        <option>All Groups</option>
+        <option>Non-Sporting</option>
+        <option>Terrier</option>
+        <option>Hound</option>
+    </select>
+    <button class="btn btn-dark clear">Clear</button>
+    <br><br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th>Group</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            {{#each competitions}}
+            <tr>
+                <td>{{dataValues.name}}</td>
+                <td>{{dataValues.email}}</td>
+                <td>{{dataValues.date}}</td>
+                <td>{{dataValues.description}}</td>
+                <td>{{dataValues.location}}</td>
+                <td id="group">{{dataValues.group}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
 
 </div>
+</div>
 
-<script></script>
+
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+
+    $(document).ready(function () {
+        $('#competitionGroup').change(function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+
+            });
+        });
+    });
+
+    $(".clear").on("click", function () {
+        event.preventDefault();
+
+        $("#myInput").val("").trigger("keyup");
+        $("#competitionGroup").val("").trigger("change");
+    })
+
+</script>

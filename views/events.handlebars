@@ -23,7 +23,19 @@
         </a>
     </div>
 
-    <div id="event-results"></div>
+{{!-- All Competitions Displayed --}}
+    <div class="row">
+    {{#each competitions}}
+    <div class="col-12-sm">
+        <h2>{{dataValues.name}}</h2>
+        Email: {{dataValues.email}}
+        Breed: {{dataValues.date}}
+        Description: {{dataValues.description}}
+        Location: {{dataValues.location}}
+        Group: {{dataValues.group}}
+        {{/each}}
+    </div>
+</div>
 
 </div>
 

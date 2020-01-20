@@ -3,26 +3,16 @@
     <h2 class="text-center mb-3">Breeders</h2>
 
     <div class="row">
+        <div class="col-sm-6 my-4">
+            <h3>Search for a Breeder!</h3>
+        </div>
 
-<div class="col-sm-12 text-center mt-4">
-    <h3>Don't See a Breeder? Click Here to Add Them!</h3>
-    <a href="/add-breeder">
-        <button type="button" class="btn btn-dark" id="add-breeder">Add Breeder</button>
-    </a>
-</div>
-        <h3>Search for a Breeder!</h3>
-        {{!-- <div class="col-sm">
-            <div class="card p-3">
-                <input class="form-control" placeholder="Breeder Name" type="text" id="name" />
-                <br />
-                <input class="form-control" placeholder="City" type="text" id="city" />
-                <br />
-                <input class="form-control" placeholder="Group" type="text" id="group" />
-                <br />
-                <button type="button" class="btn btn-dark" id="search-breeder">Search for Breeder</button>
-            </div>
-        </div> --}}
-
+        <div class="col-sm-6 text-center my-4">
+            <h3>Don't See a Breeder? Click Here to Add Them!</h3>
+            <a href="/add-breeder">
+                <button type="button" class="btn btn-dark" id="add-breeder">Add Breeder</button>
+            </a>
+        </div>
 
     </div>
     {{!-- All Breeders Displayed --}}
@@ -33,18 +23,18 @@
 
         </div>
         <table class="table table-hover">
-            <input class="col-sm-3" type="text" id="userInput" placeholder="Search Breeders">
-             <select class="form-group"id="breederGroup">
-                    <option val=""></option>
-                    <option>Hound</option>
-                    <option>Terrier</option>
-                    <option>Working</option>
-                    <option>Herding</option>
-                    <option>Sporting</option>
-                    <option>Non-Sporting</option>
-                    <option>Toy</option>
-                </select>
-                <button class="btn btn-dark clear">Clear</button>
+            <input class="col-sm-3 form-group" type="text" id="userInput" placeholder="Search Breeders">
+            <select class="form-group ml-2" id="breederGroup">
+                <option val=""></option>
+                <option>Hound</option>
+                <option>Terrier</option>
+                <option>Working</option>
+                <option>Herding</option>
+                <option>Sporting</option>
+                <option>Non-Sporting</option>
+                <option>Toy</option>
+            </select>
+            <button class="btn btn-dark clear form-group mx-2">Clear</button>
 
             <div class="col-sm">
 
@@ -77,7 +67,8 @@
                             No
                             {{/if }}
                         </td>
-                        <td>{{#if dataValues.litterDate}}
+                        <td>
+                            {{#if dataValues.litterDate}}
                             {{dataValues.litterDate}}
                             {{else}}
                             -

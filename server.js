@@ -59,3 +59,9 @@ function initializeDB(seed1, seed2) {
 
   db.Breeder.bulkCreate(seed2).then(function(data) {});
 }
+
+/*
+Client ID: 253176437795-0kifinfrj2v66itoc8v1lda34lhji28t.apps.googleusercontent.com
+
+Client Secret: OwHL8Wy8MiKfhh6VTmW64SLe
+*/

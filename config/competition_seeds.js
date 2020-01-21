@@ -107,9 +107,16 @@ let competitionSeeds = [
 {
   name: "East coast Working Dog Trial",
   email: "WorkingDogz@gmail.com",
-  date: "03/028/2020",
+  date: "08/03/2020",
   location: "90069",
-  description: "Judge ",
+  description: "Judge George Townson will be Judging the all day event.",
+  group: "All Groups"
+},{
+  name: "All breed Agility",
+  email: "AgilityDoggoz@gmail.com",
+  date: "03/08/2020",
+  location: "61931",
+  description: "No description ",
   group: "All Groups"
 }
 ];

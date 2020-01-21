@@ -111,11 +111,36 @@ let competitionSeeds = [
   location: "90069",
   description: "Judge George Townson will be Judging the all day event.",
   group: "All Groups"
-},{
+},
+{
   name: "All breed Agility",
   email: "AgilityDoggoz@gmail.com",
   date: "03/08/2020",
   location: "61931",
+  description: "No description ",
+  group: "All Groups"
+},
+{
+  name: "Barn Hunt Trial",
+  email: "RatzSWF@gmail.com",
+  date: "19/08/2020",
+  location: "46107",
+  description: "No description ",
+  group: "All Groups"
+},
+{
+  name: "Strawberry Cluster Classic Conformation",
+  email: "StrawberyClubAB@gmail.com",
+  date: "15/07/2020",
+  location: "46107",
+  description: "No description ",
+  group: "All Groups"
+},
+{
+  name: "Canine Good Citizen Testing",
+  email: "StarzK9z@gmail.com",
+  date: "10/07/2020",
+  location: "34744",
   description: "No description ",
   group: "All Groups"
 }

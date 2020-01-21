@@ -19,69 +19,71 @@
         {{!-- All Competitions Displayed --}}
 
         <div class="row">
-
-            <br>
-
-            <table class="table table-hover">
-                <input class="col-sm-3 form-group" type="text" id="userInput" placeholder="Search Events">
-                <select class="form-group ml-2" id="competitionGroup">
-                    <option val=""></option>
-                    <option>Hound</option>
-                    <option>Herding</option>
-                    <option>Terrier</option>
-                    <option>Working</option>
-                    <option>Sporting</option>
-                    <option>Non-Sporting</option>
-                    <option>Toy</option>
-                    <option>All Groups</option>
-                </select>
-                <button class="btn btn-dark clear form-group mx-2">Clear</button>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Date</th>
-                        <th>Description</th>
-                        <th>Location</th>
-                        <th>Group</th>
-                    </tr>
-                </thead>
-
-                {{#each competitions}}
-
-                <tbody id="myTable">
-                    <tr>
-                        <th><strong>{{dataValues.name}}</th>
-                        </strong>
-                        <td>{{dataValues.email}}</td>
-                        <td>{{dataValues.date}}</td>
-
-                        <td>
-
-                            {{dataValues.description}}</td>
-
-                        <td>
-                            <a href="/map">
-                                <button class="btn btn-success">
-                                    {{dataValues.location}}
-                                </button>
-                            </a>
-                        </td>
-
-                        <td>{{dataValues.group}}</td>
-                    </tr>
-                </tbody>
+            <div class="col-sm-12">
 
 
-                {{/each}}
-                <div class="col-12-sm">
-                </div>
-            </table>
+                <br>
+
+                <table class="table table-hover">
+                    <input class="col-sm-3 form-group" type="text" id="userInput" placeholder="Search Events">
+                    <select class="form-group ml-2" id="competitionGroup">
+                        <option val=""></option>
+                        <option>Hound</option>
+                        <option>Herding</option>
+                        <option>Terrier</option>
+                        <option>Working</option>
+                        <option>Sporting</option>
+                        <option>Non-Sporting</option>
+                        <option>Toy</option>
+                        <option>All Groups</option>
+                    </select>
+                    <button class="btn btn-dark clear form-group mx-2">Clear</button>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Location</th>
+                            <th>Group</th>
+                        </tr>
+                    </thead>
+
+                    {{#each competitions}}
+
+                    <tbody id="myTable">
+                        <tr>
+                            <th><strong>{{dataValues.name}}</th>
+                            </strong>
+                            <td>{{dataValues.email}}</td>
+                            <td>{{dataValues.date}}</td>
+
+                            <td>
+
+                                {{dataValues.description}}</td>
+
+                            <td>
+                                <a href="/map">
+                                    <button class="btn btn-success">
+                                        {{dataValues.location}}
+                                    </button>
+                                </a>
+                            </td>
+
+                            <td>{{dataValues.group}}</td>
+                        </tr>
+                    </tbody>
+
+
+                    {{/each}}
+                    <div class="col-12-sm">
+                    </div>
+                </table>
+            </div>
+
+
         </div>
-
-
     </div>
-</div>
 </div>
 
 <script>

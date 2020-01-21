@@ -6,6 +6,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: wheat;
 }
 
 .list-group-item {
@@ -31,4 +32,51 @@ svg {
 path {
   height: 100px;
   width: 100px;
+}
+
+
+
+.jumbotron {
+  background-color: white;
+  border-bottom: 1px wheat solid;
+  margin-bottom: 0;
+  background-image: url("../assets/img/unleashed.jpg");
+  width: 1200px;
+}
+
+.navlink {
+  font-weight: bold;
+  color: #555;
+}
+
+.navlink:hover {
+  color: wheat;
+}
+
+h1 {
+  width: 100%;
+  font-size: 70px;
+  font-family: 'Righteous', cursive;
+}
+
+body {
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+  padding: 5px;  
+}
+
+th {
+  font-weight: bold;
+}
+
+.dogsearch {
+  height: 100vh;
+}
+
+nav {
+  border-bottom: 1px solid wheat;
+}
+
+#breed_data_table {
+  margin: auto;
 }

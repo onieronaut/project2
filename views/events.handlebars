@@ -23,9 +23,8 @@
             <br>
 
             <table class="table table-hover">
-                <input class="col-sm-3 my-1" type="text" id="userInput"
-                    placeholder="Search Breeders">
-                <select class="form-group"id="competitionGroup">
+                <input class="col-sm-3 form-group" type="text" id="userInput" placeholder="Search Events">
+                <select class="form-group ml-2" id="competitionGroup">
                     <option val=""></option>
                     <option>Hound</option>
                     <option>Herding</option>
@@ -36,7 +35,7 @@
                     <option>Toy</option>
                     <option>All Groups</option>
                 </select>
-                <button class="btn btn-dark clear">Clear</button>
+                <button class="btn btn-dark clear form-group mx-2">Clear</button>
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -60,7 +59,15 @@
                         <td>
 
                             {{dataValues.description}}</td>
-                        <td>{{dataValues.location}}</td>
+
+                        <td>
+                            <a href="/map">
+                                <button class="btn btn-success">
+                                    {{dataValues.location}}
+                                </button>
+                            </a>
+                        </td>
+
                         <td>{{dataValues.group}}</td>
                     </tr>
                 </tbody>
@@ -102,6 +109,10 @@
 
         $("#myInput").val("").trigger("keyup");
         $("#competitionGroup").val("").trigger("change");
+    })
+
+    $("#location").on("click", function () {
+        window.location.href = '/map';
     })
 
 </script>

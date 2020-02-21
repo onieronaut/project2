@@ -33,6 +33,6 @@ Here are the contributors to this project:
 
 [<img src="https://avatars3.githubusercontent.com/u/49372671?s=460&v=4" height="40px" width="40px">](https://github.com/onieronaut) [Jerard Gonzalez](https://github.com/onieronaut)
 
-[<img src="https://media-exp1.licdn.com/dms/image/C5603AQGgys-Ut1Qhcw/profile-displayphoto-shrink_800_800/0?e=1585180800&v=beta&t=f3UVIp5VHJO-x5BwbFSVdexqtI9JKcGn-RqjzbeGn7I" height="40px" width="40px">](https://github.com/MagenBouchard) [Magan Bouchard](https://github.com/MagenBouchard)
+[<img src="https://media-exp1.licdn.com/dms/image/C5603AQGgys-Ut1Qhcw/profile-displayphoto-shrink_800_800/0?e=1585180800&v=beta&t=f3UVIp5VHJO-x5BwbFSVdexqtI9JKcGn-RqjzbeGn7I" height="40px" width="40px">](https://github.com/MagenBouchard) [Magen Bouchard](https://github.com/MagenBouchard)
 
 [<img src="https://media-exp1.licdn.com/dms/image/C4E03AQFuF0ueWRw_tw/profile-displayphoto-shrink_200_200/0?e=1585180800&v=beta&t=nSqWVySUot2gTW_FialUtZQUlYNMp8WsDo7iQedVP50" height="40px" width="40px">](https://github.com/maserallm) [Maserall Marcelin](https://github.com/maserallm)

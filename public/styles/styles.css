@@ -70,7 +70,7 @@ th {
 }
 
 .dogsearch {
-  height: 100vh;
+  min-height: 700px;
 }
 
 nav {
@@ -80,3 +80,4 @@ nav {
 #breed_data_table {
   margin: auto;
 }
+
